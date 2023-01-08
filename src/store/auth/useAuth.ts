@@ -1,4 +1,5 @@
 import AuthInfo from "@models/auth/AuthInfo";
+import ContextCallbackOption from "@models/common/ContextCallbackOption";
 import create from "zustand";
 
 interface AuthState {
@@ -6,11 +7,11 @@ interface AuthState {
   isAuthInfoConfirmed: boolean;
   isOTPConfirmed: boolean;
   
-  confirmAuthInfo: (authInfo: AuthInfo) => void;
-  confirmOTP: (otp: string) => void;
+  confirmAuthInfo: (authInfo: AuthInfo, options?: ContextCallbackOption) => void;
+  confirmOTP: (otp: string, options?: ContextCallbackOption) => void;
   
-  login: () => void;
-  logout: () => void;
+  login: (options?: ContextCallbackOption) => void;
+  logout: (options?: ContextCallbackOption) => void;
 }
 
 const useAuth = create<AuthState>((set, get) => {
@@ -19,20 +20,24 @@ const useAuth = create<AuthState>((set, get) => {
     isAuthInfoConfirmed: false,
     isOTPConfirmed: false,
 
-    confirmAuthInfo: (authInfo) => {
+    confirmAuthInfo: (authInfo, options) => {
       set({isAuthInfoConfirmed: true});
+      options?.success && options.success();
     },
 
-    confirmOTP: (otp) => {
+    confirmOTP: (otp, options) => {
       set({isOTPConfirmed: true});
+      options?.success && options.success();
     },
 
-    login: () => {
+    login: (options) => {
       set({ isAuthenticated: true });
+      options?.success && options.success();
     },
 
-    logout: () => {
+    logout: (options) => {
       set({isAuthenticated: false});
+      options?.success && options.success();
     }
   }
 })

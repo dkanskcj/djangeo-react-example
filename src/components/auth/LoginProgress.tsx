@@ -27,10 +27,10 @@ const LoginProgress = () => {
   }, [stepIndex]);
   
   return (
-    <div className="flex flex-col">
-      <section>
+    <div className="min-h-screen flex flex-col justify-center items-center">
+      <section className="max-w-xl w-[70vw] flex flex-col gap-8 p-8 border rounded-md shadow-md">
         <h1 className="uppercase text-4xl font-bold">Login</h1>
-        <article>
+        <article className="">
           {stepOrder[stepIndex] === "LOGIN" && <LoginForm next={next} confirmAuthInfo={auth.confirmAuthInfo} />}
           {stepOrder[stepIndex] === "OTP" && <OTPForm next={next} confirmOTP={auth.confirmOTP} />}
         </article>

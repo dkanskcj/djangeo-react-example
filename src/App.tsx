@@ -1,6 +1,7 @@
 import TopBar from "@components/layouts/TopBar";
 import ProtectedRoutes from "@components/routes/ProtectedRoutes";
 import UnauthenticatedRoutes from "@components/routes/UnauthenticatedRoutes";
+import useAuth from "@store/auth/useAuth";
 import Path from "@utils/path";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -12,8 +13,8 @@ function App() {
   // useLocation 안 해도 원래 location이 있지만 상태관리 안 되어 있는 애고
   // useLocation() 사용해서 가져와야 상태관리 되어 있는 애라서 -> useEffect 등등에 deps로 넣거나 등등.
   const location = useLocation();
+  const { isAuthenticated } = useAuth();
 
-  const [isAuthenticated, setAuthenticated] = useState(false);
   const [hasNav, setHasNav] = useState(false);
   // Boolean 명명:
   // isAbc, setAbc
