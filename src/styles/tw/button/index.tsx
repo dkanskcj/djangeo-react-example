@@ -36,6 +36,19 @@ export const PrimaryButton: FC<CommonButtonProps> = (props) => {
   )
 }
 
+export const SuccessButton: FC<CommonButtonProps> = (props) => {
+  const { className, children, ...restProps } = props;
+
+  return (
+    <ButtonInterface
+      {...restProps}
+      className={`bg-success active:bg-success-active text-success-contra ${className}`}
+    >
+      {children}
+    </ButtonInterface>
+  )
+}
+
 export const LinkButton: FC<CommonButtonProps> = (props) => {
   const { className, children, ...restProps } = props;
 
