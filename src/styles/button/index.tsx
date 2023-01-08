@@ -10,7 +10,12 @@ const ButtonInterface: FC<CommonButtonProps> = (props) => {
       className={`border rounded-md px-2 py-1 duration-150 active:scale-95 disabled:bg-slate-400 disabled:text-slate-700 ${className}`}
       onClick={(event) => {
         event.preventDefault();
-        onClick && onClick(event);
+        // short circuit: 앞에가 false면 뒤에 것이 실행이 안 됨.
+        // != null: null과 undefined 모두 비교
+        // !== null: null만 보고, undefined는 안 봄.
+        onClick != null && onClick(event);
+        // => 나중엔
+        // onClick && onClick(event);
       }}
     >
       {children}
