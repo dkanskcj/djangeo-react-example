@@ -1,4 +1,6 @@
-import { CgProfile } from "react-icons/cg" 
+import Path from "@utils/path"
+import { CgProfile } from "react-icons/cg"
+import { Link } from "react-router-dom"
 
 const TopBar = () => {
   return (
@@ -6,9 +8,15 @@ const TopBar = () => {
       <h1 className="uppercase select-none text-4xl">React Sample</h1>
       <nav className="col-span-3">
         <ul className="flex gap-4 select-none">
-          <li>Home</li>
-          <li>어디</li>
-          <li>어디</li>
+          <Link to={Path.HOME}>
+            <li>Home</li>
+          </Link>
+          <Link to={Path.UI}>
+            <li>UI Preivew</li>
+          </Link>
+          <Link to={Path.ERR404}>
+            <li>404</li>
+          </Link>
         </ul>
       </nav>
       <div className="col-span-2 flex flex-col justify-center items-end">

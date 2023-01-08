@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 // React Snippets => rafce 화살표 함수 컴포넌트(+ export까지)
 
 function App() {
-  const pathsHasNav: string[] = [Path.HOME, /* ... */];
+  const pathsHasNav: string[] = [Path.HOME, Path.UI, /* ... */];
   // useLocation 안 해도 원래 location이 있지만 상태관리 안 되어 있는 애고
   // useLocation() 사용해서 가져와야 상태관리 되어 있는 애라서 -> useEffect 등등에 deps로 넣거나 등등.
   const location = useLocation();

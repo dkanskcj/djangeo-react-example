@@ -2,6 +2,7 @@
 const Path = {
   HOME: "/",
   LOGIN: "/login",
+  UI: "/ui",
   ERR404: "/404",
 } as const;
 
