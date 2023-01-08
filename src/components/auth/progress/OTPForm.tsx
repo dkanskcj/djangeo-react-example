@@ -1,4 +1,4 @@
-import ContextCallbackOption from "@models/common/ContextCallbackOption";
+import ContextCallbackOption from "@store/domain/ContextCallbackOption";
 import { PrimaryButton } from "@styles/tw/button";
 import {FunctionComponent as FC, useEffect, useRef, useState} from "react";
 

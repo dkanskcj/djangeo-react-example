@@ -1,5 +1,5 @@
 import AuthInfo from "@models/auth/AuthInfo";
-import ContextCallbackOption from "@models/common/ContextCallbackOption";
+import ContextCallbackOption from "@store/domain/ContextCallbackOption";
 import create from "zustand";
 
 interface AuthState {
