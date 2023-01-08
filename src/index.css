@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my-li {
+  @apply flex justify-center items-center py-2 hover:bg-dark hover:text-light duration-75
+}
