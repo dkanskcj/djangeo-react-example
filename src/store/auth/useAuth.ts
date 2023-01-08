@@ -9,7 +9,7 @@ interface AuthState {
   confirmAuthInfo: (authInfo: AuthInfo) => void;
   confirmOTP: (otp: string) => void;
   
-  login: (authInfo: AuthInfo) => void;
+  login: () => void;
   logout: () => void;
 }
 
