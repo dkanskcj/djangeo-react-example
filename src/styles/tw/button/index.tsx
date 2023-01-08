@@ -27,12 +27,12 @@ export const PrimaryButton: FC<CommonButtonProps> = (props) => {
   const { className, children, ...restProps } = props;
 
   return (
-    <button
+    <ButtonInterface
       {...restProps}
       className={`bg-primary active:bg-primary-active text-primary-contra ${className}`}
     >
       {children}
-    </button>
+    </ButtonInterface>
   )
 }
 
@@ -40,11 +40,11 @@ export const LinkButton: FC<CommonButtonProps> = (props) => {
   const { className, children, ...restProps } = props;
 
   return (
-    <button
+    <ButtonInterface
       {...restProps}
       className={`bg-transparent text-link active:text-link-active ${className}`}
     >
       {children}
-    </button>
+    </ButtonInterface>
   )
 }
